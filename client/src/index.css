@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input_login_register {
+  @apply w-full text-sm px-4 py-3 bg-gray-200 focus:bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-400
+}
+
+.button_login_register {
+  @apply w-full bg-purple-800 hover:bg-purple-700 text-gray-100 justify-center p-3 rounded-lg font-semibold duration-500
+}
+
+.button_login_register_google_facebook {
+  @apply w-full flex items-center justify-center border border-gray-300 hover:border-gray-900 hover:bg-slate-900 text-sm text-gray-500 hover:text-gray-300 p-3 rounded-lg duration-500 font-medium hover:text-base
+}
