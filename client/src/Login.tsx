@@ -31,7 +31,7 @@ function Login() {
                             <div className='absolute top-0 left-0 p-12 space-y-6'>
                                 <h1 className='text-gray-300 font-semibold text-2xl'>Welcome</h1>
                                 <h1 className='text-gray-300'>This is my project to practice reactjs 2023 making by Phatjiro</h1>
-                                <h1 className='text-gray-300'>You can visit me in github: <a href="https://github.com/Phatjiro" className='text-purple-300'>Phatjiro <FontAwesomeIcon icon={faGithub} /></a></h1>
+                                <h1 className='text-gray-300'>You can visit me in github: <a href="https://github.com/Phatjiro" target="_blank" className='text-purple-300'>Phatjiro <FontAwesomeIcon icon={faGithub} /></a></h1>
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@ function Login() {
                                     <span>
                                         Project 2023 by
                                     </span>
-                                    <a href="https://github.com/Phatjiro" className='text-purple-700 hover:text-purple-600'> Phatjiro</a>
+                                    <a href="https://github.com/Phatjiro" target="_blank" className='text-purple-700 hover:text-purple-600'> Phatjiro</a>
                                 </div>
                             </div>
                         </div>
