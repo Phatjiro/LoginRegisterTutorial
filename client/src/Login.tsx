@@ -6,6 +6,7 @@ import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FcGoogle } from "react-icons/fc";
 
 import bgFlower from './assets/bg_flower.jpg'
+import { Link } from 'react-router-dom'
 
 function Login() {
 
@@ -38,7 +39,7 @@ function Login() {
                         <div className='bg-white rounded-3xl p-12 h-full relative'>
                             <div className='mb-6'>
                                 <h1 className='font-semibold text-2xl'>Login</h1>
-                                <p className="text-gray-400">Don't have an account? <a href='#' className="text-sm font-medium text-purple-700 hover:text-purple-600">Register now</a></p>
+                                <p className="text-gray-400">Don't have an account? <Link to="/register" className="text-sm font-medium text-purple-700 hover:text-purple-600">Register now</Link></p>
                             </div>
                             <div className='space-y-6'>
                                 <input className="input_login_register" type="email" placeholder="Email"/>

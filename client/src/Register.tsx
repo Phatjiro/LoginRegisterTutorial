@@ -6,6 +6,7 @@ import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FcGoogle } from "react-icons/fc";
 
 import bgFlower from './assets/bg_flower.jpg'
+import { Link } from 'react-router-dom'
 
 function Register() {
 
@@ -39,7 +40,7 @@ function Register() {
                         <div className='bg-white rounded-3xl p-12 h-full relative'>
                             <div className='mb-6'>
                                 <h1 className='font-semibold text-2xl'>Register</h1>
-                                <p className="text-gray-400">Already have an account? <a href='#' className="text-sm font-medium text-purple-700 hover:text-purple-600">Login now</a></p>
+                                <p className="text-gray-400">Already have an account? <Link to="/login" className="text-sm font-medium text-purple-700 hover:text-purple-600">Login now</Link></p>
                             </div>
                             <div className='space-y-6'>
                                 <input className="input_login_register" type="email" placeholder="Email"/>
