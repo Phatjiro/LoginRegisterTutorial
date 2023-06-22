@@ -72,7 +72,7 @@ function Register() {
                                 </div>
                                 <div>
                                     <button type='submit' className='button_login_register'>
-                                        Login
+                                        Register
                                     </button>
                                 </div>
                                 <div className='flex items-center justify-center space-x-2'>
