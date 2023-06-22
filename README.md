@@ -5,5 +5,5 @@
 ## Image demo
 | **STT** | **Pages** | **Demo** |
 | :------: | :------: | :------: |
-| 1 | Login | <img alt="Login page" src="https://user-images.githubusercontent.com/89081979/247868337-ba700c8f-f758-4c68-8f7d-7b7d672e62fd.png" width="600"> |
-| 2 | Register | <img alt="Register page" src="https://user-images.githubusercontent.com/89081979/247879686-24e33841-af50-4616-b90a-6c8a9f5ad4b2.png" width="600"> |
+| 1 | Login | <img alt="Login page" src="https://user-images.githubusercontent.com/89081979/247883935-a0734aba-c8bb-4693-8ac8-b789abcf05a2.png" width="600"> |
+| 2 | Register | <img alt="Register page" src="https://user-images.githubusercontent.com/89081979/247883967-eb949097-28e5-499b-bf96-cd9abb477352.png" width="600"> |
