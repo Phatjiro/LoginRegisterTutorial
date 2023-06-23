@@ -1,9 +1,9 @@
 # LoginRegisterTutorial
 ## Setup
-Fontend:
+### Client
     npm install
     npm run dev
-Backend:
+### Server
     npm install
     npm start
 ## Image demo
