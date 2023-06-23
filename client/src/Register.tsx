@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 
 function Register() {
 
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
     const [showPassword, setShowPassword] = useState(false)
@@ -43,7 +44,11 @@ function Register() {
                                 <p className="text-gray-400">Already have an account? <Link to="/login" className="text-sm font-medium text-purple-700 hover:text-purple-600">Login now</Link></p>
                             </div>
                             <div className='space-y-6'>
-                                <input className="input_login_register" type="email" placeholder="Email"/>
+                                <input 
+                                    className="input_login_register"
+                                    type="email"
+                                    placeholder="Email"
+                                    onChange={(e) => setEmail(e.target.value)}/>
                                 <div className='relative'>
                                     <input
                                         className='input_login_register'

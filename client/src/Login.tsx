@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 
 function Login() {
 
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [showPassword, setShowPassword] = useState(false)
 
@@ -42,7 +43,11 @@ function Login() {
                                 <p className="text-gray-400">Don't have an account? <Link to="/register" className="text-sm font-medium text-purple-700 hover:text-purple-600">Register now</Link></p>
                             </div>
                             <div className='space-y-6'>
-                                <input className="input_login_register" type="email" placeholder="Email"/>
+                                <input 
+                                    className="input_login_register"
+                                    type="email"
+                                    placeholder="Email"
+                                    onChange={(e) => setEmail(e.target.value)}/>
                                 <div className='relative'>
                                     <input
                                         className='input_login_register'
