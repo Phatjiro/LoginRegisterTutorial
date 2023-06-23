@@ -1,7 +1,11 @@
 # LoginRegisterTutorial
 ## Setup
+Fontend:
     npm install
     npm run dev
+Backend:
+    npm install
+    npm start
 ## Image demo
 | **STT** | **Pages** | **Demo** |
 | :------: | :------: | :------: |
