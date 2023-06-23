@@ -2,11 +2,13 @@ import { useState } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FcGoogle } from "react-icons/fc";
 
 import bgFlower from './assets/bg_flower.jpg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+import anxios from 'axios'
 
 function Register() {
 
@@ -18,6 +20,19 @@ function Register() {
     const toggleShowPassword = () => {
         setShowPassword(!showPassword)
     }
+
+    const handleSubmitRegister = (e) => {
+        e.preventDefault();
+
+        anxios.post("http://localhost:3000/api/register", { email, password })
+        .then(res => {
+            console.log("Register - OK!")
+            navigate('/login')
+        })
+        .catch(err => console.log(err));
+    };
+
+    const navigate = useNavigate()
 
   return (
     <>
@@ -48,13 +63,15 @@ function Register() {
                                     className="input_login_register"
                                     type="email"
                                     placeholder="Email"
-                                    onChange={(e) => setEmail(e.target.value)}/>
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
                                 <div className='relative'>
                                     <input
                                         className='input_login_register'
                                         type={showPassword ? 'text' : 'password'}
                                         placeholder='Password'
-                                        onChange={(e) => setPassword(e.target.value)}/>
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
                                     <div className="flex items-center absolute inset-y-0 right-0 mr-3">
                                         <FontAwesomeIcon icon={showPassword? faEye : faEyeSlash} onClick={toggleShowPassword} className='text-purple-700'/>
                                     </div>
@@ -64,7 +81,8 @@ function Register() {
                                         className='input_login_register'
                                         type={showPassword ? 'text' : 'password'}
                                         placeholder='Confirm Password'
-                                        onChange={(e) => setConfirmPassword(e.target.value)}/>
+                                        onChange={(e) => setConfirmPassword(e.target.value)}
+                                    />
                                     <div className="flex items-center absolute inset-y-0 right-0 mr-3">
                                         <FontAwesomeIcon icon={showPassword? faEye : faEyeSlash} onClick={toggleShowPassword} className='text-purple-700'/>
                                     </div>
@@ -77,7 +95,10 @@ function Register() {
                                     </div>
                                 </div>
                                 <div>
-                                    <button type='submit' className='button_login_register'>
+                                    <button 
+                                        type='submit' 
+                                        className='button_login_register'
+                                        onClick={handleSubmitRegister}>
                                         Register
                                     </button>
                                 </div>
