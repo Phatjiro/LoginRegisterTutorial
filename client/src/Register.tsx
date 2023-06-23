@@ -98,7 +98,8 @@ function Register() {
                                     <button 
                                         type='submit' 
                                         className='button_login_register'
-                                        onClick={handleSubmitRegister}>
+                                        onClick={handleSubmitRegister}
+                                    >
                                         Register
                                     </button>
                                 </div>

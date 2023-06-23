@@ -28,7 +28,6 @@ connection.connect((err) => {
 app.post('/api/register', (req, res) => {
     const { email, password } = req.body;
 
-    // * Check if the mail are available
     const sql = 'INSERT INTO accounts (email, password) VALUES (?, ?)';
     const values = [email, password]
     connection.query(sql, values, (err, results) => {
@@ -36,6 +35,23 @@ app.post('/api/register', (req, res) => {
             return res.status(500).json({ err });
         }
         return res.status(200).json({ message: 'User registered successfully' });
+    });
+});
+
+// * Create a route to handle the login form
+app.post('/api/login', (req, res) => {
+    const { email, password } = req.body;
+
+    const sql = 'SELECT * FROM accounts WHERE email = ? AND password = ?';
+    const values = [email, password]
+    connection.query(sql, values, (err, results) => {
+        if (err) {
+            return res.status(500).json({ err });
+        }
+        if (results.length === 0) {
+            return res.status(401).json({ message: 'Invalid email or password' });
+        }
+        return res.status(200).json({ message: 'User login successfully' }); 
     });
 });
 

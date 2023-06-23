@@ -6,17 +6,36 @@ import { faFacebook, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FcGoogle } from "react-icons/fc";
 
 import bgFlower from './assets/bg_flower.jpg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+import anxios from 'axios'
 
 function Login() {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [showPassword, setShowPassword] = useState(false)
+    const [errorMessage, setErrorMessage] = useState('')
 
     const toggleShowPassword = () => {
         setShowPassword(!showPassword)
     }
+
+    const handleSubmitLogin = (e) => {
+        e.preventDefault();
+
+        anxios.post("http://localhost:3000/api/login", { email, password })
+        .then(res => {
+            console.log("Login - OK!")
+            navigate('/register')
+        })
+        .catch(err => {
+            console.log(err)
+            setErrorMessage('Incorrect email or password. Please enter valid login information.')
+        })
+    }
+
+    const navigate = useNavigate()
 
   return (
     <>
@@ -47,13 +66,16 @@ function Login() {
                                     className="input_login_register"
                                     type="email"
                                     placeholder="Email"
-                                    onChange={(e) => setEmail(e.target.value)}/>
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <span className='text-red-500 text-sm font-medium'>{errorMessage}</span>
                                 <div className='relative'>
                                     <input
                                         className='input_login_register'
                                         type={showPassword ? 'text' : 'password'}
                                         placeholder='Password'
-                                        onChange={(e) => setPassword(e.target.value)}/>
+                                        onChange={(e) => setPassword(e.target.value)}
+                                    />
                                     <div className="flex items-center absolute inset-y-0 right-0 mr-3">
                                         <FontAwesomeIcon icon={showPassword? faEye : faEyeSlash} onClick={toggleShowPassword} className='text-purple-700'/>
                                     </div>
@@ -66,7 +88,11 @@ function Login() {
                                     </div>
                                 </div>
                                 <div>
-                                    <button type='submit' className='button_login_register'>
+                                    <button 
+                                        type='submit' 
+                                        className='button_login_register'
+                                        onClick={handleSubmitLogin}
+                                    >
                                         Login
                                     </button>
                                 </div>
